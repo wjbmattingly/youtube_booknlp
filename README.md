@@ -11,4 +11,3 @@ This course is an introduction to
 |03 |Understanding BookNLP Output |
 |04 |BookNLP on Literature |
 |05 |BookNLP on Historical Documents|
-.
