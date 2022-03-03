@@ -1,5 +1,5 @@
-# INTRODUCTION TO PYTHON FOR BEGINNERS
-This course is an introduction to 
+# INTRODUCTION TO BOOKNLP
+This course is an introduction to BookNLP
 
 ## OUTLINE OF COURSE
 
