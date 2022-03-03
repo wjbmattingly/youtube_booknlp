@@ -20,6 +20,7 @@ This Python Textbook was created during my postdoctoral fellowship at the Smiths
 <p align="center">
 
 
+  
 
 ```{image} ./images/data_science_lab_logo.png
 :alt: dsl
