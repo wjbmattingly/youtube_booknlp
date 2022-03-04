@@ -6,5 +6,5 @@ parts:
   chapters:
   - file: 01_intro
     title: Introduction to BookNLP
-  - file: 02_starting_with_booknlp
+  - file: 02_starting
     title: Getting Started with BookNLP
