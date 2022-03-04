@@ -395,7 +395,7 @@ using device cuda
   warnings.warn(warn_msg)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- startup: 10.059 seconds ---
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- startup: 7.314 seconds ---
 </pre></div>
 </div>
 </div>
@@ -408,7 +408,7 @@ using device cuda
 <p>Finally, let’s make a third object that will be a string. This will be our book_id. Think of this as a unique name that will the basis for how the external files are named.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_file</span><span class="o">=</span><span class="s2">&quot;data/harry_potter.txt&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_file</span><span class="o">=</span><span class="s2">&quot;data/harry_potter_cleaned.txt&quot;</span>
 
 <span class="n">output_directory</span><span class="o">=</span><span class="s2">&quot;data/harry_potter&quot;</span>
 
@@ -434,13 +434,13 @@ using device cuda
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- spacy: 19.637 seconds ---
---- entities: 88.932 seconds ---
---- quotes: 0.100 seconds ---
---- attribution: 27.348 seconds ---
---- name coref: 0.493 seconds ---
---- coref: 27.721 seconds ---
---- TOTAL (excl. startup): 164.572 seconds ---, 99401 words
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- spacy: 18.936 seconds ---
+--- entities: 88.072 seconds ---
+--- quotes: 0.105 seconds ---
+--- attribution: 28.766 seconds ---
+--- name coref: 0.545 seconds ---
+--- coref: 28.508 seconds ---
+--- TOTAL (excl. startup): 165.277 seconds ---, 99256 words
 </pre></div>
 </div>
 </div>
