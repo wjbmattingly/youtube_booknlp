@@ -245,12 +245,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-tokens-file">
-   3.3. The .tokens file
+   3.3. The .tokens File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-entities-file">
-   3.4. The .entities File!
+   3.4. The .entities File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -271,6 +271,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-book-html-file">
    3.8. The .book.html File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   3.9. Conclusion
   </a>
  </li>
 </ul>
@@ -305,12 +310,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-tokens-file">
-   3.3. The .tokens file
+   3.3. The .tokens File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-entities-file">
-   3.4. The .entities File!
+   3.4. The .entities File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -331,6 +336,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-book-html-file">
    3.8. The .book.html File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   3.9. Conclusion
   </a>
  </li>
 </ul>
@@ -364,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The goal of this chapter is to explain what each of these files contains so that in the next few chapters, we can start extracting important data from them.</p>
 </div>
 <div class="section" id="the-tokens-file">
-<h2><span class="section-number">3.3. </span>The .tokens file<a class="headerlink" href="#the-tokens-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3. </span>The .tokens File<a class="headerlink" href="#the-tokens-file" title="Permalink to this headline">¶</a></h2>
 <p>The very first file that we should analyze is the .tokens file. Essentially, this is a tab separated value file (TSV) that contains all the tokens on each line of the file and some important data about those tokens. A token is a word or punctuation mark within a text. The very first line of the file will look something like this:</p>
 <p>paragraph_ID	sentence_ID	token_ID_within_sentence	token_ID_within_document	word	lemma	byte_onset	byte_offset	POS_tag	fine_POS_tag	dependency_relation	syntactic_head_ID	event</p>
 <p>As this can be a bit difficult to parse, I am going to load it up as a TSV file through Pandas so we can analyze it a bit better.</p>
@@ -612,7 +622,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="the-entities-file">
-<h2><span class="section-number">3.4. </span>The .entities File!<a class="headerlink" href="#the-entities-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4. </span>The .entities File<a class="headerlink" href="#the-entities-file" title="Permalink to this headline">¶</a></h2>
 <p>Let’s do the same thing with the .entities file now!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1331,7 +1341,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>For the g category, we see a few different keys:</p>
 <ul class="simple">
 <li><p>inference - the pronouns for the entity in order of highest frequency to lowest</p></li>
-<li><p>argmax - the likely pronoun/gendew</p></li>
+<li><p>argmax - the likely pronoun/gender for the entity</p></li>
+<li><p>max - the degree to which that pronoun set is used compared to others, e.g. the percentage</p></li>
+<li><p>total (not entirely sure about this)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1462,6 +1474,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="the-book-html-file">
 <h2><span class="section-number">3.8. </span>The .book.html File<a class="headerlink" href="#the-book-html-file" title="Permalink to this headline">¶</a></h2>
+<p>The final file that is outputted from BookNLP is the .book.html file. This is a nicely organized, easy-to-read, html file that should open in your browser. For this file, I am going to be covering it exclusively in the attached video as there is too much to realistically display in this notebook. If you find the video inaccessible, please let me know and I will add some text here with screenshots as a future update.</p>
+</div>
+<div class="section" id="conclusion">
+<h2><span class="section-number">3.9. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>It is my goal that this chapter has helped you understand the large quantity of data and files outputted by the BookNLP pipeline. Getting this data and understanding it is only half the battle. In the coming chapters, we will use what we learned here to gain some valuable insight about the new data that we have generated.</p>
 </div>
 </div>
 
