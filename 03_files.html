@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Introduction to BookNLP</title>
+    <title>3. The Output Files &#8212; Introduction to BookNLP</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="2. Getting Started with BookNLP" href="02_starting.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -120,9 +121,9 @@ const thebe_selector_output = ".output, .cell_output"
   Analyzing the Output
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="03_files.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    3. The Output Files
   </a>
  </li>
@@ -167,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/99_random.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/03_files.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -187,10 +188,10 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/wjbmattingly/youtube_booknlp/issues/new?title=Issue%20on%20page%20%2F99_random.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/wjbmattingly/youtube_booknlp/issues/new?title=Issue%20on%20page%20%2F03_files.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/wjbmattingly/youtube_booknlp/edit/main/99_random.ipynb"><button
+        <a class="edit-button" href="https://github.com/wjbmattingly/youtube_booknlp/edit/main/03_files.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -210,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/youtube_booknlp/main?urlpath=tree/99_random.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/youtube_booknlp/main?urlpath=tree/03_files.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -231,7 +232,47 @@ const thebe_selector_output = ".output, .cell_output"
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#covered-in-this-chapter">
+   3.1. Covered in this Chapter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   3.2. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-tokens-file">
+   3.3. The .tokens file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-entities-file">
+   3.4. The .entities File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-quote-file">
+   3.5. The .quote File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-supersense-file">
+   3.6. The .supersense file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-book-file">
+   3.7. The .book File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-book-html-file">
+   3.8. The .book.html File
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -242,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1><center>The Output Files</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -251,7 +292,47 @@ const thebe_selector_output = ".output, .cell_output"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#covered-in-this-chapter">
+   3.1. Covered in this Chapter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   3.2. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-tokens-file">
+   3.3. The .tokens file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-entities-file">
+   3.4. The .entities File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-quote-file">
+   3.5. The .quote File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-supersense-file">
+   3.6. The .supersense file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-book-file">
+   3.7. The .book File
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-book-html-file">
+   3.8. The .book.html File
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -261,57 +342,42 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">booknlp.booknlp</span> <span class="kn">import</span> <span class="n">BookNLP</span>
-</pre></div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="center-the-output-files-center">
+<h1><span class="section-number">3. </span><center>The Output Files</center><a class="headerlink" href="#center-the-output-files-center" title="Permalink to this headline">¶</a></h1>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>August 2021</center><div class="section" id="covered-in-this-chapter">
+<h2><span class="section-number">3.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>The .tokens file<br></p></li>
+<li><p>The .entities file<br></p></li>
+<li><p>The .quote file<br></p></li>
+<li><p>The .supersense file<br></p></li>
+<li><p>The .book file<br></p></li>
+<li><p>The .book.html file<br></p></li>
+</ol>
 </div>
+<div class="section" id="introduction">
+<h2><span class="section-number">3.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In the last chapter, we looked at how to create a BookNLP pipeline and process a book or longer document. The goal of that process was to generate a collection of files within an output directory. In our case, we stored our files in “data/harry_potter”. Within this repo, you will be able to examine the output files, but rather than making you switch between this textbook and the repo, I thought I would present the files in this chapter with screenshots. With that said, let’s begin.</p>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\wma22\anaconda3\envs\booknlp\lib\site-packages\tqdm\auto.py:22: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
-  from .autonotebook import tqdm as notebook_tqdm
-</pre></div>
+<div class="section" id="the-tokens-file">
+<h2><span class="section-number">3.3. </span>The .tokens file<a class="headerlink" href="#the-tokens-file" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>using device cpu
-</pre></div>
+<div class="section" id="the-entities-file">
+<h2><span class="section-number">3.4. </span>The .entities File<a class="headerlink" href="#the-entities-file" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="the-quote-file">
+<h2><span class="section-number">3.5. </span>The .quote File<a class="headerlink" href="#the-quote-file" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="the-supersense-file">
+<h2><span class="section-number">3.6. </span>The .supersense file<a class="headerlink" href="#the-supersense-file" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_params</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;pipeline&quot;</span><span class="p">:</span><span class="s2">&quot;entity,quote,supersense,event,coref&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;model&quot;</span><span class="p">:</span><span class="s2">&quot;big&quot;</span><span class="p">}</span>
-</pre></div>
+<div class="section" id="the-book-file">
+<h2><span class="section-number">3.7. </span>The .book File<a class="headerlink" href="#the-book-file" title="Permalink to this headline">¶</a></h2>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">booknlp</span><span class="o">=</span><span class="n">BookNLP</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">model_params</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;pipeline&#39;: &#39;entity,quote,supersense,event,coref&#39;, &#39;model&#39;: &#39;big&#39;}
---- startup: 5.466 seconds ---
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Input file to process</span>
-<span class="n">input_file</span><span class="o">=</span><span class="s2">&quot;harry_potter.txt&quot;</span>
-
-<span class="c1"># Output directory to store resulting files in</span>
-<span class="n">output_directory</span><span class="o">=</span><span class="s2">&quot;harry_potter&quot;</span>
-
-<span class="c1"># File within this directory will be named ${book_id}.entities, ${book_id}.tokens, etc.</span>
-<span class="n">book_id</span><span class="o">=</span><span class="s2">&quot;harry_potter&quot;</span>
-<span class="n">booknlp</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">output_directory</span><span class="p">,</span> <span class="n">book_id</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="section" id="the-book-html-file">
+<h2><span class="section-number">3.8. </span>The .book.html File<a class="headerlink" href="#the-book-html-file" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -339,7 +405,14 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02_starting.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span><center>Getting Started with BookNLP</center></p>
+        </div>
+    </a>
 </div>
             
         </div>
