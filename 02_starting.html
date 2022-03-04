@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Getting Started with BookNLP &#8212; Introduction to BookNLP</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="1. Introduction to BookNLP" href="01_intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/data_science_lab_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to BookNLP</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   <p align="center">
+    INTRODUCTION TO BOOKNLP
+   </p>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Key Concepts and Terms
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_intro.html">
+   1. Introduction to BookNLP
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Getting Started with BookNLP
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/02_starting.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/wjbmattingly/youtube_booknlp"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/wjbmattingly/youtube_booknlp/issues/new?title=Issue%20on%20page%20%2F02_starting.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/wjbmattingly/youtube_booknlp/edit/main/02_starting.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/youtube_booknlp/main?urlpath=tree/02_starting.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#covered-in-this-chapter">
+   2.1. Covered in this Chapter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.2. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-booknlp-and-creating-a-pipeline">
+   2.3. Importing BookNLP and Creating a Pipeline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-the-file-and-directories">
+   2.4. Setting up the File and Directories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-the-pipeline">
+   2.5. Running the Pipeline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   2.6. Conclusion
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><center>Getting Started with BookNLP</center></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#covered-in-this-chapter">
+   2.1. Covered in this Chapter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.2. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-booknlp-and-creating-a-pipeline">
+   2.3. Importing BookNLP and Creating a Pipeline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-the-file-and-directories">
+   2.4. Setting up the File and Directories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-the-pipeline">
+   2.5. Running the Pipeline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   2.6. Conclusion
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="center-getting-started-with-booknlp-center">
+<h1><span class="section-number">2. </span><center>Getting Started with BookNLP</center><a class="headerlink" href="#center-getting-started-with-booknlp-center" title="Permalink to this headline">¶</a></h1>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>August 2021</center><div class="section" id="covered-in-this-chapter">
+<h2><span class="section-number">2.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><br>
+</li>
+<li><br>
+</li>
+<li><br></li>
+</ol>
+</div>
+<div class="section" id="introduction">
+<h2><span class="section-number">2.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have successfully installed BookNLP and the requisite spaCy small model, we can now dive in! I have tested BookNLP on Linux (Ubuntu 20.04) and Windows 10. The code provided in this chapter has worked on both systems once installed correctly. If you are receiving errors, feel free to submit an issue or pull request with the GitHub icon in the top right corner of the page.</p>
+<p>In this chapter, I will introduce you to a lot of the code that can be found in the README.md file on the official repository for BookNLP as well as the official Google Colab Notebook. I always believe in following the docs early in these textbooks, so that you can follow along a bit more easily.</p>
+<p>The goal of this chapter is to teach you how to run BookNLP over a book (stored as a text file) and generate the requisite output: a series of files (explained in detail in the next chapter).</p>
+<p>Unlike most libraries I have introduced to readers and viewers of my YouTube channel in the past, the main goal of BookNLP is to generate a series of files stored in a subdirectory. These files will contain all the requisite data to then begin analyzing your works.</p>
+</div>
+<div class="section" id="importing-booknlp-and-creating-a-pipeline">
+<h2><span class="section-number">2.3. </span>Importing BookNLP and Creating a Pipeline<a class="headerlink" href="#importing-booknlp-and-creating-a-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>As with all libraries, we need to import BookNLP into our Python file (or notebook) in order to work with it. We will specifically need the BookNLP class, so let’s go ahead and import everything with the command below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">booknlp.booknlp</span> <span class="kn">import</span> <span class="n">BookNLP</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Enabling eager execution
+INFO:tensorflow:Enabling v2 tensorshape
+INFO:tensorflow:Enabling resource variables
+INFO:tensorflow:Enabling tensor equality
+INFO:tensorflow:Enabling control flow v2
+using device cuda
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have imported the BookNLP class correctly, it’s time to create the BookNLP pipeline and model in memory. In order to create a BookNLP pipeline, you will want to create a dictionary. Stick with the documentation here and call this object “model_params”. This will be a dictionary that will have two keys: pipeline, and model.</p>
+<ul class="simple">
+<li><p>pipeline will take a value that is a string within which are commas that separate the different components. You can play around with this later, but for now let’s work with the entire pipeline which consists of:</p>
+<ul>
+<li><p>entity</p></li>
+<li><p>quote</p></li>
+<li><p>supersense</p></li>
+<li><p>event</p></li>
+<li><p>coref</p></li>
+</ul>
+</li>
+<li><p>model will have a key that states the size of the model. For now, use big as we are just trying to follow the docs and create an output that we can analyze in the next chapter</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;pipeline&quot;</span><span class="p">:</span><span class="s2">&quot;entity,quote,supersense,event,coref&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;model&quot;</span><span class="p">:</span><span class="s2">&quot;big&quot;</span>
+    
+                <span class="p">}</span>
+
+<span class="n">booknlp</span><span class="o">=</span><span class="n">BookNLP</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">,</span> <span class="n">model_params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;pipeline&#39;: &#39;entity,quote,supersense,event,coref&#39;, &#39;model&#39;: &#39;big&#39;}
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\users\wma22\appdata\local\programs\python\python39\lib\site-packages\spacy\util.py:833: UserWarning: [W095] Model &#39;en_core_web_sm&#39; (3.1.0) was trained with spaCy v3.1 and may not be 100% compatible with the current version (3.2.2). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- startup: 10.059 seconds ---
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="setting-up-the-file-and-directories">
+<h2><span class="section-number">2.4. </span>Setting up the File and Directories<a class="headerlink" href="#setting-up-the-file-and-directories" title="Permalink to this headline">¶</a></h2>
+<p>Next, we need to setup two objects: the input_file and the output_directory. The input file will be a string that corresponds to the location of your text file that contains the book or large document you want to analyze. For simplicity sake, I have placed our input file in data.</p>
+<p>The output directory is the directory into which you want BookNLP to dump all the generated data files. Although there are ways to generate folders programmatically with os, I recommend to keep things simple and make the directories manually for now. In our case, I have already created a subfolder within data entitled “harry_potter”. This is where the files I generate will be stored.</p>
+<p>Finally, let’s make a third object that will be a string. This will be our book_id. Think of this as a unique name that will the basis for how the external files are named.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_file</span><span class="o">=</span><span class="s2">&quot;data/harry_potter.txt&quot;</span>
+
+<span class="n">output_directory</span><span class="o">=</span><span class="s2">&quot;data/harry_potter&quot;</span>
+
+<span class="n">book_id</span><span class="o">=</span><span class="s2">&quot;harry_potter&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="running-the-pipeline">
+<h2><span class="section-number">2.5. </span>Running the Pipeline<a class="headerlink" href="#running-the-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have created the model and the necessary object names, let’s process our text! To do this, we will use booknlp.process(). This will take three arguments, all of which we have already created:</p>
+<ul class="simple">
+<li><p>input_file</p></li>
+<li><p>output_directory</p></li>
+<li><p>book_id</p></li>
+</ul>
+<p>The code below will take some time to run. Even on a powerful computer, it will take a few minutes for a 100k-word file. Do not bee surprised if this takes 10+ minutes. For benchmarks, you can see the repository.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">booknlp</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="n">input_file</span><span class="p">,</span> <span class="n">output_directory</span><span class="p">,</span> <span class="n">book_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- spacy: 19.637 seconds ---
+--- entities: 88.932 seconds ---
+--- quotes: 0.100 seconds ---
+--- attribution: 27.348 seconds ---
+--- name coref: 0.493 seconds ---
+--- coref: 27.721 seconds ---
+--- TOTAL (excl. startup): 164.572 seconds ---, 99401 words
+</pre></div>
+</div>
+</div>
+</div>
+<p>If all goes well, you should see an output like the one above that lists each process after it completes with the corresponding time it took to complete the task. You should also see the files generated in the output directory.</p>
+</div>
+<div class="section" id="conclusion">
+<h2><span class="section-number">2.6. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>At this point, we are finished! We have successfully used BookNLP to create all the requisite files. Now comes the fun part of analyzing those files which will be the task in the next chapter.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="01_intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span><center>Introduction to BookNLP</center></p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By William Mattingly<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
