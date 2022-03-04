@@ -363,6 +363,251 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="the-tokens-file">
 <h2><span class="section-number">3.3. </span>The .tokens file<a class="headerlink" href="#the-tokens-file" title="Permalink to this headline">¶</a></h2>
+<p>The very first file that we should analyze is the .tokens file. Essentially, this is a tab separated value file (TSV). A good way to think about a TSV is as a CSV where tabs are used to separate tabular data, rather than commas. Essentially, this is a dataset that can be viewed and analyzed in Excel. The very first line of the file will look something like this:</p>
+<p>paragraph_ID	sentence_ID	token_ID_within_sentence	token_ID_within_document	word	lemma	byte_onset	byte_offset	POS_tag	fine_POS_tag	dependency_relation	syntactic_head_ID	event</p>
+<p>As this can be a bit difficult to parse, I am going to load it up as a TSV file through Pandas so we can analyze it a bit better.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/harry_potter/harry_potter.tokens&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>paragraph_ID</th>
+      <th>sentence_ID</th>
+      <th>token_ID_within_sentence</th>
+      <th>token_ID_within_document</th>
+      <th>word</th>
+      <th>lemma</th>
+      <th>byte_onset</th>
+      <th>byte_offset</th>
+      <th>POS_tag</th>
+      <th>fine_POS_tag</th>
+      <th>dependency_relation</th>
+      <th>syntactic_head_ID</th>
+      <th>event</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Harry</td>
+      <td>Harry</td>
+      <td>0</td>
+      <td>5</td>
+      <td>PROPN</td>
+      <td>NNP</td>
+      <td>compound</td>
+      <td>1</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Potter</td>
+      <td>Potter</td>
+      <td>6</td>
+      <td>12</td>
+      <td>PROPN</td>
+      <td>NNP</td>
+      <td>nsubj</td>
+      <td>12</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>and</td>
+      <td>and</td>
+      <td>13</td>
+      <td>16</td>
+      <td>CCONJ</td>
+      <td>CC</td>
+      <td>cc</td>
+      <td>1</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>the</td>
+      <td>the</td>
+      <td>17</td>
+      <td>20</td>
+      <td>DET</td>
+      <td>DT</td>
+      <td>det</td>
+      <td>4</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>Sorcerer</td>
+      <td>Sorcerer</td>
+      <td>21</td>
+      <td>29</td>
+      <td>PROPN</td>
+      <td>NNP</td>
+      <td>poss</td>
+      <td>8</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>99396</th>
+      <td>3030</td>
+      <td>6972</td>
+      <td>12</td>
+      <td>99396</td>
+      <td>summer</td>
+      <td>summer</td>
+      <td>439721</td>
+      <td>439727</td>
+      <td>NOUN</td>
+      <td>NN</td>
+      <td>npadvmod</td>
+      <td>99388</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99397</th>
+      <td>3030</td>
+      <td>6972</td>
+      <td>13</td>
+      <td>99397</td>
+      <td>....</td>
+      <td>....</td>
+      <td>439727</td>
+      <td>439731</td>
+      <td>PUNCT</td>
+      <td>.</td>
+      <td>punct</td>
+      <td>99386</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99398</th>
+      <td>3030</td>
+      <td>6972</td>
+      <td>14</td>
+      <td>99398</td>
+      <td>\t</td>
+      <td>439731</td>
+      <td>439732</td>
+      <td>PUNCT</td>
+      <td>''</td>
+      <td>punct</td>
+      <td>99386</td>
+      <td>O</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>99399</th>
+      <td>3031</td>
+      <td>6973</td>
+      <td>0</td>
+      <td>99399</td>
+      <td>THE</td>
+      <td>the</td>
+      <td>439734</td>
+      <td>439737</td>
+      <td>DET</td>
+      <td>DT</td>
+      <td>det</td>
+      <td>99400</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>99400</th>
+      <td>3031</td>
+      <td>6973</td>
+      <td>1</td>
+      <td>99400</td>
+      <td>END</td>
+      <td>END</td>
+      <td>439738</td>
+      <td>439741</td>
+      <td>PROPN</td>
+      <td>NNP</td>
+      <td>nsubj</td>
+      <td>99398</td>
+      <td>O</td>
+    </tr>
+  </tbody>
+</table>
+<p>99401 rows × 13 columns</p>
+</div></div></div>
+</div>
+<p>If you don’t know what the block of code above does, please do not be concerned. We will not be dealing with Pandas in this textbook. If you are interested in Pandas, though, I have a free textbook on it entitled <a href="pandas.pythonhumanities.com">Introduction to Pandas</a>.</p>
+<p>As you can see from the output above, we have something that looks like Excel, or tabular data. Let’s break this down a bit and explain what each column represents:</p>
+<ul class="simple">
+<li><p>paragraph_ID = the index of the paragraph, starting at paragraph 1 being 0 and moving up to 3031 in our case.</p></li>
+<li><p>sentence_ID = same as the paragraph_ID, but with sentences</p></li>
+<li><p>token_ID_within_sentence = same as a the two above, but with a token count by sentence, resetting with each sentence.</p></li>
+<li><p>token_ID_within_document = same as above, but where tokens keep going up in value throughout the whole document, starting at 0 and ending, in our case, at 99400.</p></li>
+<li><p>word = this is the raw text of the word</p></li>
+<li><p>lemma = this is the root of the word</p></li>
+<li><p>byte_onset = think of this as the start character index</p></li>
+<li><p>byte_offset - think of this as the concluding character index</p></li>
+<li><p>POS_tag = the Part of Speech (based on spaCy)</p></li>
+<li><p>fine_POS_tag = a more granular understanding of the Part of Speech</p></li>
+<li><p>dependency_relation = this is equivalent to spaCy’s dep tag.</p></li>
+<li><p>syntactic_head_ID = This points to the head of the current token so that you can understand how a token relates to other words in the sentence</p></li>
+<li><p>event = this tells you if the toke</p></li>
+</ul>
 </div>
 <div class="section" id="the-entities-file">
 <h2><span class="section-number">3.4. </span>The .entities File<a class="headerlink" href="#the-entities-file" title="Permalink to this headline">¶</a></h2>
