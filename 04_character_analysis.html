@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Character Analysis &#8212; Introduction to BookNLP</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="3. The Output Files" href="03_files.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/data_science_lab_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to BookNLP</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   <p align="center">
+    INTRODUCTION TO BOOKNLP
+   </p>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Key Concepts and Terms
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_intro.html">
+   1. Introduction to BookNLP
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_starting.html">
+   2. Getting Started with BookNLP
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analyzing the Output
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_files.html">
+   3. The Output Files
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Analyzing the Output Files
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/04_character_analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/wjbmattingly/youtube_booknlp"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/wjbmattingly/youtube_booknlp/issues/new?title=Issue%20on%20page%20%2F04_character_analysis.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/wjbmattingly/youtube_booknlp/edit/main/04_character_analysis.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/youtube_booknlp/main?urlpath=tree/04_character_analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#covered-in-this-chapter">
+   4.1. Covered in this Chapter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   4.2. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyzing-the-characters-from-booknlp-repo">
+   4.3. Analyzing the Characters (From BookNLP Repo)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parsing-verb-usage">
+   4.4. Parsing Verb Usage
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><center>Character Analysis</center></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#covered-in-this-chapter">
+   4.1. Covered in this Chapter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   4.2. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyzing-the-characters-from-booknlp-repo">
+   4.3. Analyzing the Characters (From BookNLP Repo)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parsing-verb-usage">
+   4.4. Parsing Verb Usage
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="center-character-analysis-center">
+<h1><span class="section-number">4. </span><center>Character Analysis</center><a class="headerlink" href="#center-character-analysis-center" title="Permalink to this headline">¶</a></h1>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>March 2022</center><div class="section" id="covered-in-this-chapter">
+<h2><span class="section-number">4.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>How to Analyze the .book file in depth <br></p></li>
+<li><p>Create custom functions to generate character data<br></p></li>
+<li><p>Analyze the character data at the verb-level<br></p></li>
+</ol>
+</div>
+<div class="section" id="introduction">
+<h2><span class="section-number">4.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This chapter is dedicated to analyzing the characters contained within the .book file. As you may recall from the last chapter, this is a JSON file. A lot of what I will cover here, can be found in the BookNLP repository, specifically in the Google Colab Jupyter Notebook. I am, however, making some modifications to the code there to make it a bit more useful for varying circumstances. I will specifically show you how to use this restructured data to pose narrow questions about characters in a text.</p>
+<p>The following functions and imports will be necessary for this chapter. They allow us to load up the JSON data from the .book file and count the occurrences of certain things found within the .book file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">proc</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_counter_from_dependency_list</span><span class="p">(</span><span class="n">dep_list</span><span class="p">):</span>
+    <span class="n">counter</span><span class="o">=</span><span class="n">Counter</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">dep_list</span><span class="p">:</span>
+        <span class="n">term</span><span class="o">=</span><span class="n">token</span><span class="p">[</span><span class="s2">&quot;w&quot;</span><span class="p">]</span>
+        <span class="n">tokenGlobalIndex</span><span class="o">=</span><span class="n">token</span><span class="p">[</span><span class="s2">&quot;i&quot;</span><span class="p">]</span>
+        <span class="n">counter</span><span class="p">[</span><span class="n">term</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">counter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have successfully created these functions, let’s go ahead and load up our JSON data from the .book file. We can do this with the function above that we created called “proc”. Essentially, this loads and parses the JSON file for us using the JSON library that comes standard with Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">proc</span><span class="p">(</span><span class="s2">&quot;data/harry_potter/harry_potter.book&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have loaded the data, we can start to analyze it!</p>
+</div>
+<div class="section" id="analyzing-the-characters-from-booknlp-repo">
+<h2><span class="section-number">4.3. </span>Analyzing the Characters (From BookNLP Repo)<a class="headerlink" href="#analyzing-the-characters-from-booknlp-repo" title="Permalink to this headline">¶</a></h2>
+<p>If you have had a chance to look at the Google Colab notebook provided by BookNLP, this function will look similar. I have made some modifications to the code presented there so that we can do a bit more with it. In the notebook, the original code printed off character data. My modifications and the fact that I have structured it as a function, allow us to do a bit more. We can actually begin analyzing the characters.</p>
+<p>I have kept my function’s code as close to the original as possible so that it can be better understood within the documentation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_character_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">printTop</span><span class="p">):</span>
+    <span class="n">character_data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;characters&quot;</span><span class="p">]:</span>
+
+        <span class="n">agentList</span><span class="o">=</span><span class="n">character</span><span class="p">[</span><span class="s2">&quot;agent&quot;</span><span class="p">]</span>
+        <span class="n">patientList</span><span class="o">=</span><span class="n">character</span><span class="p">[</span><span class="s2">&quot;patient&quot;</span><span class="p">]</span>
+        <span class="n">possList</span><span class="o">=</span><span class="n">character</span><span class="p">[</span><span class="s2">&quot;poss&quot;</span><span class="p">]</span>
+        <span class="n">modList</span><span class="o">=</span><span class="n">character</span><span class="p">[</span><span class="s2">&quot;mod&quot;</span><span class="p">]</span>
+
+        <span class="n">character_id</span><span class="o">=</span><span class="n">character</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="n">count</span><span class="o">=</span><span class="n">character</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span>
+
+        <span class="n">referential_gender_distribution</span><span class="o">=</span><span class="n">referential_gender_prediction</span><span class="o">=</span><span class="s2">&quot;unknown&quot;</span>
+
+        <span class="k">if</span> <span class="n">character</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">character</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;unknown&quot;</span><span class="p">:</span>
+            <span class="n">referential_gender_distribution</span><span class="o">=</span><span class="n">character</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">][</span><span class="s2">&quot;inference&quot;</span><span class="p">]</span>
+            <span class="n">referential_gender</span><span class="o">=</span><span class="n">character</span><span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">][</span><span class="s2">&quot;argmax&quot;</span><span class="p">]</span>
+
+        <span class="n">mentions</span><span class="o">=</span><span class="n">character</span><span class="p">[</span><span class="s2">&quot;mentions&quot;</span><span class="p">]</span>
+        <span class="n">proper_mentions</span><span class="o">=</span><span class="n">mentions</span><span class="p">[</span><span class="s2">&quot;proper&quot;</span><span class="p">]</span>
+        <span class="n">max_proper_mention</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+        
+        <span class="c1">#Let&#39;s create some empty lists that we can append to.</span>
+        <span class="n">poss_items</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">agent_items</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">patient_items</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">mod_items</span> <span class="o">=</span> <span class="p">[]</span>
+    
+        <span class="c1"># just print out information about named characters</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mentions</span><span class="p">[</span><span class="s2">&quot;proper&quot;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">max_proper_mention</span><span class="o">=</span><span class="n">mentions</span><span class="p">[</span><span class="s2">&quot;proper&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;n&quot;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">get_counter_from_dependency_list</span><span class="p">(</span><span class="n">possList</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">printTop</span><span class="p">):</span>
+                <span class="n">poss_items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">v</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
+                
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">get_counter_from_dependency_list</span><span class="p">(</span><span class="n">agentList</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">printTop</span><span class="p">):</span>
+                <span class="n">agent_items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">v</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>     
+
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">get_counter_from_dependency_list</span><span class="p">(</span><span class="n">patientList</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">printTop</span><span class="p">):</span>
+                <span class="n">patient_items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">v</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>     
+
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">get_counter_from_dependency_list</span><span class="p">(</span><span class="n">modList</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">printTop</span><span class="p">):</span>
+                <span class="n">mod_items</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">v</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>  
+
+            
+            
+            
+            <span class="c1"># print(character_id, count, max_proper_mention, referential_gender)</span>
+            <span class="n">character_data</span><span class="p">[</span><span class="n">character_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">character_id</span><span class="p">,</span>
+                                  <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="n">count</span><span class="p">,</span>
+                                  <span class="s2">&quot;max_proper_mention&quot;</span><span class="p">:</span> <span class="n">max_proper_mention</span><span class="p">,</span>
+                                  <span class="s2">&quot;referential_gender&quot;</span><span class="p">:</span> <span class="n">referential_gender</span><span class="p">,</span>
+                                  <span class="s2">&quot;possList&quot;</span><span class="p">:</span> <span class="n">poss_items</span><span class="p">,</span>
+                                  <span class="s2">&quot;agentList&quot;</span><span class="p">:</span> <span class="n">agent_items</span><span class="p">,</span>
+                                  <span class="s2">&quot;patientList&quot;</span><span class="p">:</span> <span class="n">patient_items</span><span class="p">,</span>
+                                  <span class="s2">&quot;modList&quot;</span><span class="p">:</span> <span class="n">mod_items</span>
+                                 <span class="p">}</span>
+                                
+    <span class="k">return</span> <span class="n">character_data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function expects two arguments:</p>
+<ul class="simple">
+<li><p>the data that we created above, i.e. the original .book JSON data</p></li>
+<li><p>printTop which will be the number of items you seek to return about the character</p></li>
+</ul>
+<p>Let’s go ahead and create some character_data now that will retain the top 10 items connected to each character. If you want to see all possible things connected to the character, simply set this item to a very high number, e.g. 20000. This is not the cleanest, but it allowed me to keep this function as simple as possible.</p>
+<p>This function will return a new data file that will be a dictionary where each unique id is a key and the corresponding character data will be populated as its value (also structured as a dictionary). I have kept the keys of this nested dictionary identical to the original Google Colab file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">character_data</span> <span class="o">=</span> <span class="n">create_character_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have created this character data, let’s take a look at the main Harry Potter id (which is 98).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">character_data</span><span class="p">[</span><span class="mi">98</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: 98, &#39;count&#39;: 2029, &#39;max_proper_mention&#39;: &#39;Harry&#39;, &#39;referential_gender&#39;: &#39;he/him/his&#39;, &#39;possList&#39;: [(19, &#39;head&#39;), (15, &#39;eyes&#39;), (12, &#39;parents&#39;), (12, &#39;cupboard&#39;), (10, &#39;life&#39;), (10, &#39;hand&#39;), (9, &#39;aunt&#39;), (8, &#39;mind&#39;), (7, &#39;heart&#39;), (7, &#39;uncle&#39;)], &#39;agentList&#39;: [(91, &#39;said&#39;), (46, &#39;had&#39;), (39, &#39;know&#39;), (22, &#39;felt&#39;), (22, &#39;saw&#39;), (21, &#39;got&#39;), (21, &#39;going&#39;), (21, &#39;thought&#39;), (18, &#39;heard&#39;), (18, &#39;looked&#39;)], &#39;patientList&#39;: [(10, &#39;told&#39;), (5, &#39;take&#39;), (5, &#39;asked&#39;), (4, &#39;kill&#39;), (4, &#39;reminded&#39;), (4, &#39;stop&#39;), (4, &#39;got&#39;), (4, &#39;tell&#39;), (3, &#39;took&#39;), (3, &#39;saw&#39;)], &#39;modList&#39;: [(8, &#39;sure&#39;), (5, &#39;able&#39;), (4, &#39;famous&#39;), (3, &#39;glad&#39;), (2, &#39;name&#39;), (2, &#39;special&#39;), (2, &#39;surprised&#39;), (2, &#39;baby&#39;), (2, &#39;stupid&#39;), (2, &#39;afraid&#39;)]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that we can now see the main gender, verbs, possession items, etc. connected to Harry Potter. Having the data structured in this manner allows us to more easily start posing some questions to the original .book file.</p>
+</div>
+<div class="section" id="parsing-verb-usage">
+<h2><span class="section-number">4.4. </span>Parsing Verb Usage<a class="headerlink" href="#parsing-verb-usage" title="Permalink to this headline">¶</a></h2>
+<p>One of those questions can be about verb usage. I have created a brand new function that allows you to explore how certain verbs are used within the text based on the new character data file we just created. It expects one argument: the new character data file. We can pass an additional keyword argument that should be a list. This list will contain one or two of the following items:</p>
+<ul class="simple">
+<li><p>agent - the doer of the action</p></li>
+<li><p>patient - the recipient of the action</p></li>
+</ul>
+<p>Again, this function is not something I would put in production. I have designed it to be easier to read so that you can do something similar and grab data you may find relevant for your own project or research.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_verb_usage</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">analysis</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;agent&quot;</span><span class="p">,</span> <span class="s2">&quot;patient&quot;</span><span class="p">]):</span>
+    <span class="n">new_analysis</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">analysis</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;agent&quot;</span><span class="p">:</span>
+            <span class="n">new_analysis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;agentList&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;patient&quot;</span><span class="p">:</span>
+            <span class="n">new_analysis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;patientList&quot;</span><span class="p">)</span>
+    <span class="n">main_agents</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">main_patients</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">character_data</span><span class="p">:</span>
+        <span class="n">temp_data</span> <span class="o">=</span> <span class="n">character_data</span><span class="p">[</span><span class="n">character</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">new_analysis</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">verb</span> <span class="ow">in</span> <span class="n">temp_data</span><span class="p">[</span><span class="n">item</span><span class="p">]:</span>
+                <span class="n">verb</span> <span class="o">=</span> <span class="n">verb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;agentList&quot;</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">verb</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">main_agents</span><span class="p">:</span>
+                        <span class="n">main_agents</span><span class="p">[</span><span class="n">verb</span><span class="p">]</span> <span class="o">=</span> <span class="p">[(</span><span class="n">character</span><span class="p">,</span> <span class="n">temp_data</span><span class="p">[</span><span class="s2">&quot;max_proper_mention&quot;</span><span class="p">])]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">main_agents</span><span class="p">[</span><span class="n">verb</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">character</span><span class="p">,</span> <span class="n">temp_data</span><span class="p">[</span><span class="s2">&quot;max_proper_mention&quot;</span><span class="p">]))</span>
+                <span class="k">elif</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;patientList&quot;</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">verb</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">main_patients</span><span class="p">:</span>
+                        <span class="n">main_patients</span><span class="p">[</span><span class="n">verb</span><span class="p">]</span> <span class="o">=</span> <span class="p">[(</span><span class="n">character</span><span class="p">,</span> <span class="n">temp_data</span><span class="p">[</span><span class="s2">&quot;max_proper_mention&quot;</span><span class="p">])]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">main_patients</span><span class="p">[</span><span class="n">verb</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">character</span><span class="p">,</span> <span class="n">temp_data</span><span class="p">[</span><span class="s2">&quot;max_proper_mention&quot;</span><span class="p">]))</span>
+    <span class="n">verb_usage</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;agent&quot;</span><span class="p">:</span> <span class="n">main_agents</span><span class="p">,</span>
+                 <span class="s2">&quot;patient&quot;</span><span class="p">:</span> <span class="n">main_patients</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">verb_usage</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Essentially, this function will read in the character data file that we created above and create a new dictionary that has two keys: agent and patient. Within each will be the verbs used in the text. These will be matched to a list of the characters connected to those verbs. Let’s go ahead and create this verb data now.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">verb_data</span> <span class="o">=</span> <span class="n">find_verb_usage</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By restructuring the data around the verbs, you can analyze the characters in a verb-centric manner. Let’s say I was interested in what characters were the agents of the verb “reared”. I could go into the dictionary at the agent key and look for the key of reared within the agent verbs. My output is the tuple of (character_id, most frequent name for that character). In this case: Firenze the centaur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">verb_data</span><span class="p">[</span><span class="s2">&quot;agent&quot;</span><span class="p">][</span><span class="s2">&quot;reared&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(352, &#39;Firenze&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is important to note two things here, however. First, our verbs are not lemmatized. I intentionally left this as the case because in some circumstances understanding how a verb is used is important. You may, for example, be interested in how “said” functioned in the next, not both “said” and “say”. If you wanted to modify the code above, therefore, you could go into the tokens file to find that verb’s lemma.</p>
+<p>Another thing to note is that we are only seeing the results from the top-10 in this scenario. If you want to see how verbs area used by all characters, create a new character data file and make your top-n equal to a larger number.</p>
+<p>I am going to conclude this chapter temporarily here. I would encourage you all to explore the functions a bit more on your own and come up with your own functions that allow you to extract data to address specific questions. Submit them to me via GitHub and I will add them as separate sections in this chapter. Just let me know how you wish to be cited.</p>
+<p>In the next chapter, we will do something similar to this, but for events.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="03_files.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span><center>The Output Files</center></p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By William Mattingly<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
