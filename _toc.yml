@@ -13,5 +13,5 @@ parts:
   chapters:
   - file: 03_files
     title: The Output Files
-  - file: 04_events
-    title: Analyzing Events
+  - file: 04_character_analysis
+    title: Analyzing the Output Files
