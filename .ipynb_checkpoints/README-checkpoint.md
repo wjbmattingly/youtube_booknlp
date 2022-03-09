@@ -9,6 +9,7 @@ This course is an introduction to BookNLP
 |01 |Introduction to BookNLP|
 |02 |Getting Started with BookNLP |
 |03 |Understanding BookNLP Output |
-|04 |BookNLP on Literature |
-|05 |BookNLP on Historical Documents|
-.
+|04 |Character Analysis |
+|05 |Event Analysis|
+|06 |Quote Analysis|
+|07 |BookNLP with Historical Documents|

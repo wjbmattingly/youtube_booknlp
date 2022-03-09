@@ -14,4 +14,4 @@ parts:
   - file: 03_files
     title: The Output Files
   - file: 04_character_analysis
-    title: Analyzing the Output Files
+    title: Character Analysis
