@@ -269,6 +269,11 @@ const thebe_selector_output = ".output, .cell_output"
    1.6. How to Install BookNLP
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-install-booknlp-on-mac-m1">
+   1.7. How to Install BookNLP on Mac M1
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -317,6 +322,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-install-booknlp">
    1.6. How to Install BookNLP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-install-booknlp-on-mac-m1">
+   1.7. How to Install BookNLP on Mac M1
   </a>
  </li>
 </ul>
@@ -392,6 +402,63 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/3l5ERF3QX0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
 </div>
+</div>
+<div class="section" id="how-to-install-booknlp-on-mac-m1">
+<h2><span class="section-number">1.7. </span>How to Install BookNLP on Mac M1<a class="headerlink" href="#how-to-install-booknlp-on-mac-m1" title="Permalink to this headline">¶</a></h2>
+<p>This section was kindly written by Joel Lee, Fellow at the United States Holocaust Memorial Museum.</p>
+<p>When running on M1, you may run into a “zsh: illegal hardware instruction” when trying to run spacy or booknlp commands after pip installing booknlp, or you may run into some dependency errors when trying to pip install booknlp. This is my workaround for that, where we download the dependencies (spacy, tensorflow, pytorch, and transformers) stated in the setup.py manually and then running pip install booknlp without its dependencies.</p>
+<ul class="simple">
+<li><p>First start with a conda install, we will follow this guide to use miniforge.</p>
+<ul>
+<li><p>https://www.mrdbourke.com/setup-apple-m1-pro-and-m1-max-for-machine-learning-and-data-science/</p>
+<ul>
+<li><p>Instant Download Link for Miniforge3 (Conda installer) for macOS arm64 chips (M1, M1 Pro, M1 Max).</p></li>
+<li><p>chmod +x ~/Downloads/Miniforge3-MacOSX-arm64.sh</p></li>
+<li><p>sh ~/Downloads/Miniforge3-MacOSX-arm64.sh</p></li>
+<li><p>source ~/miniforge3/bin/activate</p></li>
+</ul>
+</li>
+<li><p>Now create a conda environment</p>
+<ul>
+<li><p>conda create booknlp python=3.8</p></li>
+<li><p>conda activate booknlp</p></li>
+</ul>
+</li>
+<li><p>Installing tensorflow</p>
+<ul>
+<li><p>conda install -c apple tensorflow-deps</p></li>
+<li><p>python -m pip install tensorflow-macos</p></li>
+<li><p>python -m pip install tensorflow-metal</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Installing spacy</p>
+<ul>
+<li><p>conda install -c conda-forge spacy</p></li>
+</ul>
+</li>
+<li><p>Installing transformers</p>
+<ul>
+<li><p>pip install transformers</p></li>
+</ul>
+</li>
+<li><p>Installing pytorch</p>
+<ul>
+<li><p>conda install -c pytorch pytorch</p></li>
+</ul>
+</li>
+<li><p>Now if we run pip install booknlp we may get a conflicting dependency error or ResolutionImpossible error between booknlp and tensorflow. Because we have installed the dependencies ourselves, we can run the pip install without the dependencies</p>
+<ul>
+<li><p>pip install –no-dependencies booknlp</p></li>
+</ul>
+</li>
+<li><p>Now we can download the spacy pipeline and should be able to follow the rest of the booknlp repo.</p>
+<ul>
+<li><p>python -m spacy download en_core_web_sm</p></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 
