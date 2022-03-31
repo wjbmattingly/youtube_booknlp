@@ -15,3 +15,5 @@ parts:
     title: The Output Files
   - file: 04_character_analysis
     title: Character Analysis
+  - file: 04_events
+    title: Event Analysis
