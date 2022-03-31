@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advanced Searching on Strings &#8212; Introduction to BookNLP</title>
+    <title>5. Advanced Searching on Strings &#8212; Introduction to BookNLP</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="4. Character Analysis" href="04_character_analysis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -120,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
   Analyzing the Output
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="03_files.html">
    3. The Output Files
@@ -129,6 +130,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="04_character_analysis.html">
    4. Character Analysis
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Event Analysis
   </a>
  </li>
 </ul>
@@ -239,42 +245,42 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
+   5.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   5.2. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exploring-the-tokens-file">
-   Exploring the Tokens File
+   5.3. Exploring the Tokens File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#grabbing-the-events">
-   Grabbing the Events
+   5.4. Grabbing the Events
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyzing-events-words-and-lemmas">
-   Analyzing Events Words and Lemmas
+   5.5. Analyzing Events Words and Lemmas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#grabbing-event-sentences">
-   Grabbing Event Sentences
+   5.6. Grabbing Event Sentences
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bringing-everything-together">
-   Bringing Everything Together
+   5.7. Bringing Everything Together
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-events-file">
-   Creating a .events File.
+   5.8. Creating a .events File.
   </a>
  </li>
 </ul>
@@ -299,42 +305,42 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#covered-in-this-chapter">
-   Covered in this Chapter
+   5.1. Covered in this Chapter
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   5.2. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exploring-the-tokens-file">
-   Exploring the Tokens File
+   5.3. Exploring the Tokens File
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#grabbing-the-events">
-   Grabbing the Events
+   5.4. Grabbing the Events
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyzing-events-words-and-lemmas">
-   Analyzing Events Words and Lemmas
+   5.5. Analyzing Events Words and Lemmas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#grabbing-event-sentences">
-   Grabbing Event Sentences
+   5.6. Grabbing Event Sentences
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bringing-everything-together">
-   Bringing Everything Together
+   5.7. Bringing Everything Together
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-events-file">
-   Creating a .events File.
+   5.8. Creating a .events File.
   </a>
  </li>
 </ul>
@@ -347,11 +353,11 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="center-advanced-searching-on-strings-center">
-<h1><center>Advanced Searching on Strings</center><a class="headerlink" href="#center-advanced-searching-on-strings-center" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span><center>Advanced Searching on Strings</center><a class="headerlink" href="#center-advanced-searching-on-strings-center" title="Permalink to this headline">¶</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>August 2021</center><div class="section" id="covered-in-this-chapter">
-<h2>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>Covered in this Chapter<a class="headerlink" href="#covered-in-this-chapter" title="Permalink to this headline">¶</a></h2>
 <ol>
 <li><br>
 </li>
@@ -361,12 +367,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 </div>
 <div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>In this chapter, we will be exploring the events found by the BookNLP pipeline. Unfortunately, there is not a .events file outputted from this pipeline so if we want to discover event data, we need to figure out how to manipulate the output files to our advantage.</p>
 <p>The only output file that details event data is the .tokens file. As a result, this file will be the focus of this chapter. Each section of this chapter will analyze the .tokens file in a deeper way to identify and extract event data. At the end of the chapter, we will bring everything together with a single function that can recreate these results on any BookNLP output .tokens file.</p>
 </div>
 <div class="section" id="exploring-the-tokens-file">
-<h2>Exploring the Tokens File<a class="headerlink" href="#exploring-the-tokens-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3. </span>Exploring the Tokens File<a class="headerlink" href="#exploring-the-tokens-file" title="Permalink to this headline">¶</a></h2>
 <p>Let’s first go ahead and open up the .tokens file and take a look at it so we can remember precisely what the .tsv file looks like. If you remember from chapter 3, we can analyze the files a bit more easily, if we use pandas, a tabular data analysis library in Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -605,7 +611,7 @@ df</p>
 <p>Excellent! Now we can analyze this event column a bit more easily.</p>
 </div>
 <div class="section" id="grabbing-the-events">
-<h2>Grabbing the Events<a class="headerlink" href="#grabbing-the-events" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4. </span>Grabbing the Events<a class="headerlink" href="#grabbing-the-events" title="Permalink to this headline">¶</a></h2>
 <p>One of the things we can see above is that some event columns contain NaN. Ideally, we want to ignore these entirely. We can do this in pandas by using the isnull() method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -860,7 +866,7 @@ df</p>
 <p>We now have only 6,029 rows to analyze!</p>
 </div>
 <div class="section" id="analyzing-events-words-and-lemmas">
-<h2>Analyzing Events Words and Lemmas<a class="headerlink" href="#analyzing-events-words-and-lemmas" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.5. </span>Analyzing Events Words and Lemmas<a class="headerlink" href="#analyzing-events-words-and-lemmas" title="Permalink to this headline">¶</a></h2>
 <p>Let’s dig a little deeper. Let’s try to analyze the words and lemmas of these rows to see how many unique words and lemmas we have.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -925,7 +931,7 @@ df</p>
 <p>We eliminated only one duplicate.</p>
 </div>
 <div class="section" id="grabbing-event-sentences">
-<h2>Grabbing Event Sentences<a class="headerlink" href="#grabbing-event-sentences" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.6. </span>Grabbing Event Sentences<a class="headerlink" href="#grabbing-event-sentences" title="Permalink to this headline">¶</a></h2>
 <p>Now that we know how to grab individual event-triggering words, what about the sentences that contain events? To analyze this, we can use the sentence_ID column which contains a unique number for each sentence.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1247,7 +1253,7 @@ df</p>
 </div>
 </div>
 <div class="section" id="bringing-everything-together">
-<h2>Bringing Everything Together<a class="headerlink" href="#bringing-everything-together" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.7. </span>Bringing Everything Together<a class="headerlink" href="#bringing-everything-together" title="Permalink to this headline">¶</a></h2>
 <p>Let’s now bring everything together we just learned in this chapter and make it into a function. This function will receive a file that corresponds to the .tokens file. It will find the relevant event rows and then reconstruct the sentences that correspond to each event word. The output will be a list of dictionaries that are event-centric. Each dictionary will have 3 keys:</p>
 <ul class="simple">
 <li><p>event_word = the event-triggering word</p></li>
@@ -1297,7 +1303,7 @@ df</p>
 </div>
 </div>
 <div class="section" id="creating-a-events-file">
-<h2>Creating a .events File.<a class="headerlink" href="#creating-a-events-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8. </span>Creating a .events File.<a class="headerlink" href="#creating-a-events-file" title="Permalink to this headline">¶</a></h2>
 <p>This allows us to now analyze the events identified in the BookNLP pipeline a bit more easily. Since we don’t have a .events output file, this is currently one way that we can simulate the same result by creating a special events-centric output. With this data, we can now create a new DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1444,7 +1450,14 @@ df</p>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="04_character_analysis.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span><center>Character Analysis</center></p>
+        </div>
+    </a>
 </div>
             
         </div>
